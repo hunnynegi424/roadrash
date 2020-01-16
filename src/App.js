@@ -1,24 +1,21 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import PositionDemo from './component/PositionDemo';
+import SideBlock from './component/SideBlock';
+// import HomeScreen from './component/HomeScreen/';
+// import CountDown from './component/CountDown';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* <CountDown/> */}
+      {/* <HomeScreen/> */}
+      <span>
+        <SideBlock/>
+      </span>
+      <span>
+        <PositionDemo/>
+      </span>
     </div>
   );
 }

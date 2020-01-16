@@ -1,0 +1,27 @@
+.timer-container {
+    position: absolute;
+    top: 30%;
+    left: 35%;
+}
+
+.count-down-container {
+    font-size: 10rem;
+    font-weight: bolder;
+}
+
+button {
+    width: 10rem;
+    text-align: center;
+    margin: 10px;
+    background-color: rgba(0,0,0,0);
+    border: 1px solid white;
+    min-height: 3rem;
+    color: white;
+    font-size: 20px;
+    border-radius: 20px;
+    transition: all .2s ease-in-out;
+}
+
+button:hover {
+    transform: scale(1.1);
+}

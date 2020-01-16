@@ -1,0 +1,17 @@
+.rect-box-left {
+    width: 10px;
+    height: 20px;
+    background-color: white;
+    margin: 5px;
+    position: absolute;
+    overflow: hidden;
+}
+
+.rect-box-right {
+    width: 10px;
+    height: 20px;
+    background-color: white;
+    margin: 5px;
+    position: absolute;
+    overflow: hidden;
+}

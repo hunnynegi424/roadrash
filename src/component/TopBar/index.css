@@ -1,0 +1,52 @@
+.bar-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: rgb(134, 200, 100);
+    min-height: 4rem;
+}
+
+h4 {
+    flex: 1;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    padding: 0 10px 0;
+}
+
+.counter {
+    flex: 2;
+    justify-content: center;
+    align-items: center;
+}
+label {
+    font-size: 1.5rem;
+    font-weight: bolder;
+}
+
+.input-container {
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+}
+
+.level-input {
+    margin: 5px;
+    border: 1px solid white;
+    min-height: 1.5rem;
+    border-radius: 5px;
+}
+
+.level-list {
+    min-width: 200px;
+    border-radius: 10px;
+    background-color: white;
+    color: black;
+    position: absolute;
+    top: 40px;
+    right: 120px;
+    list-style: none;
+}
+ li {
+    text-align: center;
+ }

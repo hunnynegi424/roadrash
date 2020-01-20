@@ -1,23 +1,21 @@
 .timer-container {
-    position: absolute;
-    top: 30%;
-    left: 35%;
+    display: flex;
+    padding: 0 10px 0 10px;
 }
 
 .count-down-container {
-    font-size: 10rem;
+    font-size: 2rem;
     font-weight: bolder;
 }
 
-button {
-    width: 10rem;
+.start-stop-btn {
+    width: 4rem;
     text-align: center;
-    margin: 10px;
+    margin: 4px;
     background-color: rgba(0,0,0,0);
     border: 1px solid white;
-    min-height: 3rem;
     color: white;
-    font-size: 20px;
+    font-size: 14px;
     border-radius: 20px;
     transition: all .2s ease-in-out;
 }

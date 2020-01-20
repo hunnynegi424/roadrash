@@ -7,5 +7,5 @@
   font-size: calc(10px + 2vmin);
   color: white;
   overflow: hidden;
-  cursor: none;
+  /* cursor: none; */
 }

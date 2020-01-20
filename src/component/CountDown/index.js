@@ -1,44 +1,55 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './index.css';
 
-function CountDown() {
-    const [counter, setCounter] = useState(0)
-    const [showStop, setShowStop] = useState(false);
+export default class CountDown extends React.Component {
 
-    const incrementCounter = () => {
-        setInterval(()=>{
-        setCounter(prevCounter => prevCounter+1)
+    state={
+        counter: 0,
+        showStop: false,
+    }
+
+    incrementCounter = () => {
+        this.timeout = setInterval(()=>{
+        this.setState(prevState => ({
+            counter: prevState.counter + 1,
+        }))
         }, 1000);
     }
 
-    const startCounter = () => {
-        setShowStop(prevShowStop => !prevShowStop);
-        incrementCounter();
+    startCounter = () => {
+        this.setState(prevState => ({
+            showStop: !prevState.showStop,
+        }))
+        this.incrementCounter();
     }
 
-    const stopCounter = () => {
-        setShowStop(prevShowStop => !prevShowStop);
+    stopCounter = () => {
+        clearInterval(this.timeout);
+        this.setState(prevState => ({
+            showStop: !prevState.showStop,
+        }))
     }
 
-    const resetCounter = () => {
-        setCounter(0);
+    resetCounter = () => {
+        this.setState({counter: 0})
     }
 
 
-    return (
-        <div className="timer-container">
-            <div className="count-down-container">
-                {Math.floor(counter/60) < 10 && '0'}{Math.floor(counter/60)} : {counter%60 < 10 && '0'}{counter%60}
+    render() {
+        const {counter, showStop} = this.state;
+        return (
+            <div className="timer-container">
+                <div className="count-down-container">
+                    {Math.floor(counter/60) < 10 && '0'}{Math.floor(counter/60)} : {counter%60 < 10 && '0'}{counter%60}
+                </div>
+                <button className="start-stop-btn" onClick={this.resetCounter}>Reset</button>
+                {showStop ?
+                    (<button className="start-stop-btn" onClick={this.stopCounter}>Stop</button>)
+                    :
+                    (<button className="start-stop-btn" onClick={this.startCounter}>Start</button>)
+                }
+                
             </div>
-            <button onClick={resetCounter}>Reset</button>
-            {showStop ?
-                (<button onClick={stopCounter}>Stop</button>)
-                :
-                (<button onClick={startCounter}>Start</button>)
-            }
-            
-        </div>
-    )
-}
-
-export default CountDown;
+        )
+    }
+};
